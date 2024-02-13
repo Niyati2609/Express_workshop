@@ -30,6 +30,7 @@ function CartItem({ cartItem }) {
         try {
             const response = await axios.delete(`http://localhost:5000/cart/deleteFromCart/${cartItem._id}`);
             console.log(response.data);
+            window.location.reload();
         } catch (error) {
             console.error('Error deleting item from cart:', error);
         }
